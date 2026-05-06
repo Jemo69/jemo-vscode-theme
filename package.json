@@ -1,0 +1,28 @@
+{
+  "name": "jemo-theme",
+  "displayName": "Jemo Theme",
+  "description": "A dark VS Code theme generated from the Jemo palette.",
+  "version": "0.0.1",
+  "publisher": "jemo",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Jemo",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Jemo-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "latest"
+  }
+}
