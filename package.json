@@ -2,7 +2,7 @@
   "name": "jemo-theme",
   "displayName": "Jemo Theme",
   "description": "A dark VS Code theme generated from the Jemo palette.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "icon": "images/icon.png",
   "publisher": "jemo",
   "license": "MIT",

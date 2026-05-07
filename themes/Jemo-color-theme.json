@@ -743,6 +743,100 @@
       }
     },
     {
+      "name": "Dart keywords",
+      "scope": [
+        "keyword.control.dart",
+        "keyword.declaration.dart",
+        "keyword.other.dart",
+        "storage.modifier.dart",
+        "storage.type.primitive.dart",
+        "storage.type.function.dart"
+      ],
+      "settings": {
+        "foreground": "#C678DD"
+      }
+    },
+    {
+      "name": "Dart classes, widgets, and types",
+      "scope": [
+        "support.class.dart",
+        "entity.name.type.class.dart",
+        "entity.name.type.dart",
+        "support.type.dart",
+        "support.type.primitive.dart",
+        "meta.widget.dart"
+      ],
+      "settings": {
+        "foreground": "#7DDBD3"
+      }
+    },
+    {
+      "name": "Dart functions, constructors, and methods",
+      "scope": [
+        "entity.name.function.dart",
+        "support.function.dart",
+        "meta.function-call.dart",
+        "meta.method-call.dart",
+        "variable.function.dart"
+      ],
+      "settings": {
+        "foreground": "#82AAFF",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Dart properties and named arguments",
+      "scope": [
+        "variable.other.property.dart",
+        "variable.other.object.property.dart",
+        "entity.other.attribute-name.dart",
+        "support.variable.property.dart",
+        "meta.named-argument.dart"
+      ],
+      "settings": {
+        "foreground": "#7DDBD3"
+      }
+    },
+    {
+      "name": "Dart parameters and local variables",
+      "scope": [
+        "variable.parameter.dart",
+        "meta.function.parameters.dart",
+        "variable.other.readwrite.dart"
+      ],
+      "settings": {
+        "foreground": "#E8B45C",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Dart strings and interpolation",
+      "scope": [
+        "string.quoted.single.dart",
+        "string.quoted.double.dart",
+        "string.interpolated.dart",
+        "punctuation.definition.template-expression.dart",
+        "source.dart.embedded.source"
+      ],
+      "settings": {
+        "foreground": "#8FCE72"
+      }
+    },
+    {
+      "name": "Dart constants and annotations",
+      "scope": [
+        "constant.language.dart",
+        "constant.numeric.dart",
+        "constant.other.dart",
+        "storage.type.annotation.dart",
+        "meta.annotation.dart",
+        "punctuation.definition.annotation.dart"
+      ],
+      "settings": {
+        "foreground": "#E8B45C"
+      }
+    },
+    {
       "name": "PHP variables",
       "scope": [
         "variable.other.php",
@@ -843,6 +937,29 @@
     "*.deprecated": {
       "strikethrough": true
     },
-    "*.readonly": "#E8B45C"
+    "*.readonly": "#E8B45C",
+    "class:dart": {
+      "foreground": "#7DDBD3",
+      "bold": true
+    },
+    "interface:dart": {
+      "foreground": "#7DDBD3",
+      "italic": true
+    },
+    "enum:dart": "#7DDBD3",
+    "function:dart": {
+      "foreground": "#82AAFF",
+      "bold": true
+    },
+    "method:dart": "#82AAFF",
+    "property:dart": "#7DDBD3",
+    "parameter:dart": {
+      "foreground": "#E8B45C",
+      "italic": true
+    },
+    "variable:dart": "#D8DEE0",
+    "variable.readonly:dart": "#E8B45C",
+    "typeParameter:dart": "#E8B45C",
+    "keyword:dart": "#C678DD"
   }
 }
