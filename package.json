@@ -5,6 +5,21 @@
   "version": "0.0.2",
   "icon": "images/icon.png",
   "publisher": "jemo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jemo69/jemo-vscode-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jemo69/jemo-vscode-theme/issues"
+  },
+  "homepage": "https://github.com/Jemo69/jemo-vscode-theme#readme",
+  "keywords": [
+    "theme",
+    "dark theme",
+    "color theme",
+    "jemo"
+  ],
   "engines": {
     "vscode": "^1.80.0"
   },

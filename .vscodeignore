@@ -2,6 +2,7 @@
 .vscode-test/**
 .github/**
 releases/**
+node_modules/**
 *.vsix
 .gitignore
 vsc-extension-quickstart.md

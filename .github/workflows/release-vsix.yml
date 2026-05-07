@@ -2,6 +2,11 @@ name: Release VSIX
 
 on:
   workflow_dispatch:
+    inputs:
+      publish_marketplace:
+        description: "Publish to Visual Studio Marketplace"
+        type: boolean
+        default: false
   push:
     tags:
       - "v*"
@@ -49,7 +54,7 @@ jobs:
         run: |
           mkdir -p releases
           VERSION=$(node -p "require('./package.json').version")
-          npx vsce package --allow-missing-repository --out "releases/jemo-theme-${VERSION}.vsix"
+          npx @vscode/vsce package --out "releases/jemo-theme-${VERSION}.vsix"
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
@@ -62,3 +67,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: releases/*.vsix
+
+      - name: Publish to Visual Studio Marketplace
+        if: startsWith(github.ref, 'refs/tags/') || inputs.publish_marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          if [ -z "$VSCE_PAT" ]; then
+            echo "Missing VSCE_PAT secret. Add a Visual Studio Marketplace Personal Access Token to publish."
+            exit 1
+          fi
+          npx @vscode/vsce publish --packagePath releases/*.vsix -p "$VSCE_PAT"
