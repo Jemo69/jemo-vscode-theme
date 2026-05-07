@@ -51,10 +51,13 @@ jobs:
           NODE
 
       - name: Package VSIX
+        id: package
         run: |
           mkdir -p releases
           VERSION=$(node -p "require('./package.json').version")
-          npx @vscode/vsce package --out "releases/jemo-theme-${VERSION}.vsix"
+          VSIX="releases/jemo-theme-${VERSION}.vsix"
+          npx @vscode/vsce package --out "$VSIX"
+          echo "vsix=$VSIX" >> "$GITHUB_OUTPUT"
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
@@ -77,4 +80,6 @@ jobs:
             echo "Missing VSCE_PAT secret. Add a Visual Studio Marketplace Personal Access Token to publish."
             exit 1
           fi
-          npx @vscode/vsce publish --packagePath releases/*.vsix -p "$VSCE_PAT"
+          PUBLISHER=$(node -p "require('./package.json').publisher")
+          npx @vscode/vsce verify-pat "$PUBLISHER"
+          npx @vscode/vsce publish --packagePath "${{ steps.package.outputs.vsix }}"
