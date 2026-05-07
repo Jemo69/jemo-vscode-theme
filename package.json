@@ -3,6 +3,7 @@
   "displayName": "Jemo Theme",
   "description": "A dark VS Code theme generated from the Jemo palette.",
   "version": "0.0.1",
+  "icon": "images/icon.png",
   "publisher": "jemo",
   "engines": {
     "vscode": "^1.80.0"
